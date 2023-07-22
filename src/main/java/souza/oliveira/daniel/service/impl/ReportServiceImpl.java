@@ -2,6 +2,7 @@ package souza.oliveira.daniel.service.impl;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.opentracing.Traced;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import souza.oliveira.daniel.client.ReportRestClient;
 import souza.oliveira.daniel.dto.OpportunityDTO;
@@ -12,6 +13,7 @@ import java.io.ByteArrayInputStream;
 import java.util.List;
 
 @ApplicationScoped
+@Traced
 public class ReportServiceImpl implements ReportService {
 
     private final ReportRestClient reportRestClient;

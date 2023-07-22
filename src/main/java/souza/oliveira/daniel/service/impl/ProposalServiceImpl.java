@@ -3,12 +3,14 @@ package souza.oliveira.daniel.service.impl;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.opentracing.Traced;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import souza.oliveira.daniel.client.ProposalRestClient;
 import souza.oliveira.daniel.dto.ProposalDetailsDTO;
 import souza.oliveira.daniel.service.ProposalService;
 
 @ApplicationScoped
+@Traced
 public class ProposalServiceImpl implements ProposalService {
 
     private final ProposalRestClient proposalRestClient;
